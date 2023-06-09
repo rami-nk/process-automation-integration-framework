@@ -55,5 +55,11 @@
             <version>${flowable.version}</version>
         </dependency>
         <!-- Flowable -->
+
+        <dependency>
+            <groupId>io.miragon</groupId>
+            <artifactId>library-process-core</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>

@@ -40,5 +40,11 @@
             <artifactId>camunda-engine-rest-client-complete-springboot-starter</artifactId>
             <version>${camunda7.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>io.miragon</groupId>
+            <artifactId>library-process-core</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>
