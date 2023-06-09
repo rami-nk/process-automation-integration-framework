@@ -16,5 +16,6 @@
 
 	<modules>
 		<module>service-task-camunda7</module>
+		<module>message-camunda7</module>
 	</modules>
 </project>
