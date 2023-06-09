@@ -3,19 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>core</artifactId>
+	<artifactId>message-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>core</name>
-	<packaging>pom</packaging>
+	<name>message-api</name>
 
 	<parent>
 		<groupId>io.miragon</groupId>
-		<artifactId>process-automation-integration-framework</artifactId>
+		<artifactId>core</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-
-	<modules>
-		<module>service-task-api</module>
-		<module>message-api</module>
-	</modules>
 </project>
