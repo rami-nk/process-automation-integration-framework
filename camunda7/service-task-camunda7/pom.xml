@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>service-task-camunda7</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>service-task-camunda7</name>
+
+	<parent>
+		<groupId>io.miragon</groupId>
+		<artifactId>camunda7</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>io.miragon</groupId>
+			<artifactId>service-task-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<!--Camunda-->
+		<dependency>
+			<groupId>org.camunda.bpm</groupId>
+			<artifactId>camunda-external-task-client</artifactId>
+			<version>${camunda7.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- apache -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${apache.commons.lang.version}</version>
+		</dependency>
+	</dependencies>
+</project>

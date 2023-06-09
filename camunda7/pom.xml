@@ -3,13 +3,18 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>service-task-api</artifactId>
+	<artifactId>camunda7</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>service-task-api</name>
+	<name>camunda7</name>
+	<packaging>pom</packaging>
 
 	<parent>
 		<groupId>io.miragon</groupId>
-		<artifactId>core</artifactId>
+		<artifactId>process-automation-integration-framework</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
+
+	<modules>
+		<module>service-task-camunda7</module>
+	</modules>
 </project>
