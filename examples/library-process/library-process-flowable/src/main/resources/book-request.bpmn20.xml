@@ -3,7 +3,7 @@
   <process id="book-request" name="book-request" isExecutable="true">
     <startEvent id="startEvent1" name="Buch angefragt" flowable:formFieldValidation="true"></startEvent>
     <sequenceFlow id="sid-C55E84D4-D987-4AF5-8630-6CDDC94D2CBC" sourceRef="startEvent1" targetRef="sid-240C663C-549B-4E5F-8DFA-8F59BA216379"></sequenceFlow>
-    <serviceTask id="sid-240C663C-549B-4E5F-8DFA-8F59BA216379" name="Bestandsüber-prüfung" flowable:delegateExpression="${checkBookAvailabilityWorker}"></serviceTask>
+    <serviceTask id="sid-240C663C-549B-4E5F-8DFA-8F59BA216379" name="Bestandsüber-prüfung" flowable:delegateExpression="${checkBookAvailability}"></serviceTask>
     <sequenceFlow id="sid-A1A68148-F610-4B9F-B0E3-31C55D97843C" sourceRef="sid-240C663C-549B-4E5F-8DFA-8F59BA216379" targetRef="sid-A9C0EA49-2E43-4666-8419-B54931B5E92A"></sequenceFlow>
     <eventBasedGateway id="sid-A9C0EA49-2E43-4666-8419-B54931B5E92A"></eventBasedGateway>
     <intermediateCatchEvent id="sid-0D57896A-D4F3-4574-BE72-4653D04D37EB" name="Buchanforderung bestätigt">
@@ -19,7 +19,7 @@
     <sequenceFlow id="sid-EBDE7B70-A20D-4336-9868-1868D5BF3A40" sourceRef="sid-A9C0EA49-2E43-4666-8419-B54931B5E92A" targetRef="sid-C32C398F-5ABD-4D91-885C-D1D4AA3AD726"></sequenceFlow>
     <sequenceFlow id="sid-0940641D-E138-4C81-A427-289022DCE262" sourceRef="sid-C32C398F-5ABD-4D91-885C-D1D4AA3AD726" targetRef="sid-6F9C5727-BC75-46DB-B61E-DE87A9BC2953"></sequenceFlow>
     <sequenceFlow id="sid-19CBD97C-13B8-49BB-B9FF-85DD3F6D2B7A" sourceRef="sid-0D57896A-D4F3-4574-BE72-4653D04D37EB" targetRef="sid-53EA690A-F970-4244-A266-04CDA9DC5422"></sequenceFlow>
-    <serviceTask id="sid-53EA690A-F970-4244-A266-04CDA9DC5422" name="Buchversand vorbereiten" flowable:delegateExpression="${prepareShipmentWorker}"></serviceTask>
+    <serviceTask id="sid-53EA690A-F970-4244-A266-04CDA9DC5422" name="Buchversand vorbereiten" flowable:delegateExpression="${prepareShipment}"></serviceTask>
     <endEvent id="sid-586D1FAC-F79E-4C19-9CCE-85CFDFE8B3CC" name="Buchanfrage abgeschlossen"></endEvent>
     <sequenceFlow id="sid-D4BDE5BD-AF5D-4024-B271-3DE7A4247242" sourceRef="sid-53EA690A-F970-4244-A266-04CDA9DC5422" targetRef="sid-586D1FAC-F79E-4C19-9CCE-85CFDFE8B3CC"></sequenceFlow>
   </process>

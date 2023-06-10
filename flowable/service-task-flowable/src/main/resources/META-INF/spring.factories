@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-io.miragon.servicetaskapi.Camunda7WorkerAutoConfiguration
+io.miragon.servicetaskapi.FlowableWorkerAutoConfiguration
