@@ -21,6 +21,7 @@ public class CustomerMessageController {
         customerMessageInCommand.setFirstname(customerMessageRequestDto.getFirstname());
         customerMessageInCommand.setLastname(customerMessageRequestDto.getLastname());
         customerMessageInCommand.setAddress(customerMessageRequestDto.getAddress());
+        customerMessageInCommand.setCustomerId(customerMessageRequestDto.getCustomerId());
         customerMessageUseCase.sendCustomerMessage(customerMessageInCommand);
     }
 }

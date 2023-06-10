@@ -16,4 +16,6 @@ public class CustomerMessageRequestDto {
     private String lastname;
 
     private String address;
+
+    private String customerId;
 }

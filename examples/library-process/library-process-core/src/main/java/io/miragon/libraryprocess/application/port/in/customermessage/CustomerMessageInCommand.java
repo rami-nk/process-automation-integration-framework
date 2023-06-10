@@ -16,4 +16,6 @@ public class CustomerMessageInCommand {
     private String lastname;
 
     private String address;
+
+    private String customerId;
 }

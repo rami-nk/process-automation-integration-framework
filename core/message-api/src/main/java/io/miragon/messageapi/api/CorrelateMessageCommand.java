@@ -1,4 +1,4 @@
-package io.miragon.servicetaskapi.api;
+package io.miragon.messageapi.api;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

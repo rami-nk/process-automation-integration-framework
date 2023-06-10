@@ -6,6 +6,24 @@
 	<artifactId>service-task-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>service-task-api</name>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-autoconfigure</artifactId>
+		</dependency>
+	</dependencies>
 
 	<parent>
 		<groupId>io.miragon</groupId>

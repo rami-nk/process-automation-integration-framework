@@ -1,13 +1,13 @@
 package io.miragon.messageapi;
 
-import io.miragon.servicetaskapi.api.CorrelateMessageCommand;
-import io.miragon.servicetaskapi.api.MessageCorrelationException;
+import io.miragon.messageapi.api.CorrelateMessageCommand;
+import io.miragon.messageapi.api.MessageCorrelationException;
 import lombok.RequiredArgsConstructor;
 import org.camunda.community.rest.client.api.MessageApi;
 import org.camunda.community.rest.client.dto.CorrelationMessageDto;
 
 @RequiredArgsConstructor
-public class Camunda7MessageAdapter implements io.miragon.servicetaskapi.api.MessageApi {
+public class Camunda7MessageAdapter implements io.miragon.messageapi.api.MessageApi {
 
     private final Camunda7CorrelateMessageMapper mapper;
     private final MessageApi messageApi;

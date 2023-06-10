@@ -17,7 +17,7 @@ public class ServiceTaskApiAutoConfiguration {
     }
 
     @Bean
-    WorkerAnnotationBeanProcessor workerAnnotationBeanProcessor(final WorkerRegistry workerRegistry) {
+    public WorkerAnnotationBeanProcessor workerAnnotationBeanProcessor(final WorkerRegistry workerRegistry) {
         return new WorkerAnnotationBeanProcessor(workerRegistry);
     }
 }

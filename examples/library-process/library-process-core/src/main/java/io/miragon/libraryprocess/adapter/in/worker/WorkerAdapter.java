@@ -15,7 +15,7 @@ public class WorkerAdapter {
     private final PrepareShipmentUseCase prepareShipmentUseCase;
 
     @Worker
-    public CheckBookAvailabilityResult checkAvailability(CheckBookAvailabilityCommand checkBookAvailabilityCommand) {
+    public CheckBookAvailabilityResult checkBookAvailability(CheckBookAvailabilityCommand checkBookAvailabilityCommand) {
         return checkBookAvailabilityUseCase.checkAvailability(checkBookAvailabilityCommand);
     }
 

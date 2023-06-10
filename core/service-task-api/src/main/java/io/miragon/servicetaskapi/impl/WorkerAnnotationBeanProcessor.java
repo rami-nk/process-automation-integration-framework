@@ -1,20 +1,21 @@
 package io.miragon.servicetaskapi.impl;
 
 import io.miragon.servicetaskapi.api.Worker;
-import lombok.AllArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.util.ReflectionUtils;
 
 import java.lang.reflect.Method;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class WorkerAnnotationBeanProcessor implements BeanPostProcessor {
 
     private final WorkerRegistry workerRegistry;
 
     @Override
-    public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
+    public Object postProcessBeforeInitialization(Object bean, @NonNull final String beanName) throws BeansException {
         ReflectionUtils.doWithMethods(bean.getClass(), method -> {
             if (method.isAnnotationPresent(Worker.class)) {
                 this.workerRegistry.register(this.buildWorker(bean, method));

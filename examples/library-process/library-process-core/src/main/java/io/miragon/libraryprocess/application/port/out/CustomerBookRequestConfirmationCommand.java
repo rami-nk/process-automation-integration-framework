@@ -9,11 +9,13 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class CustomerMessageOutCommand {
+public class CustomerBookRequestConfirmationCommand {
 
     private String firstname;
 
     private String lastname;
 
     private String address;
+
+    private String customerId;
 }

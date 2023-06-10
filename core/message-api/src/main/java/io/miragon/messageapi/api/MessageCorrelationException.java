@@ -1,4 +1,4 @@
-package io.miragon.servicetaskapi.api;
+package io.miragon.messageapi.api;
 
 public class MessageCorrelationException extends RuntimeException {
 

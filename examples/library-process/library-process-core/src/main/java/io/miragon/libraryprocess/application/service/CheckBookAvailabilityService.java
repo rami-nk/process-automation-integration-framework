@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
+public
 class CheckBookAvailabilityService implements CheckBookAvailabilityUseCase {
 
     @Override

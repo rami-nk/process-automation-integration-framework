@@ -1,7 +1,7 @@
 package io.miragon.messageapi;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import io.miragon.servicetaskapi.api.CorrelateMessageCommand;
+import io.miragon.messageapi.api.CorrelateMessageCommand;
 import lombok.AllArgsConstructor;
 import org.camunda.community.rest.client.dto.CorrelationMessageDto;
 import org.camunda.community.rest.client.dto.VariableValueDto;

@@ -20,12 +20,13 @@ import java.util.Objects;
 public class Camunda7WorkerAdapter implements WorkerSubscription {
 
     private final ExternalTaskClient externalTaskClient;
+
     private final Camunda7PojoMapper camunda7PojoMapper;
 
     @Override
     public void subscribe(WorkerInfo workerInfo) {
         this.externalTaskClient.subscribe(workerInfo.getType())
-                .lockDuration(10_000L)
+                .lockDuration(30000L)
                 .handler((externalTask, externalTaskService) ->
                         this.execute(externalTask, externalTaskService, workerInfo)
                 )
@@ -39,11 +40,7 @@ public class Camunda7WorkerAdapter implements WorkerSubscription {
             final Object result = workerInfo.getMethod().invoke(workerInfo.getInstance(), mappedInput);
             final Map<String, Object> output = mapOutput(result);
             service.complete(externalTask, null, camunda7PojoMapper.mapToEngineData(output));
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
-        } catch (InvocationTargetException e) {
-            throw new RuntimeException(e);
-        } catch (JsonProcessingException e) {
+        } catch (IllegalAccessException | InvocationTargetException | JsonProcessingException e) {
             throw new RuntimeException(e);
         }
     }
