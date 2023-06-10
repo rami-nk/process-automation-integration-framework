@@ -20,6 +20,6 @@ public class BookRequestConfirmationAdapter implements CustomerBookRequestConfir
     @Override
     public void confirmBookRequest(CustomerBookRequestConfirmationCommand customerBookRequestConfirmationCommand) {
         final Map<String, Object> data =  objectMapper.convertValue(customerBookRequestConfirmationCommand, new TypeReference<>() {});
-        messageApi.correlateMessage( new CorrelateMessageCommand("BookRequestConfirmation", null, customerBookRequestConfirmationCommand.getCustomerId(), data));
+        messageApi.correlateMessage( new CorrelateMessageCommand("BookRequestConfirmation", customerBookRequestConfirmationCommand.getCustomerId(), data));
     }
 }

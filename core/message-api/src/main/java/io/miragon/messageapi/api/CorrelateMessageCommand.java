@@ -15,9 +15,7 @@ public class CorrelateMessageCommand {
 
     private String messageName;
 
-    private String businessKey;
-
-    private String correlationKey;
+    private String processInstanceId;
 
     private Map<String, Object> data;
 }

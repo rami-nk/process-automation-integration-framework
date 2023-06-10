@@ -18,8 +18,7 @@ public class Camunda7CorrelateMessageMapper {
         final CorrelationMessageDto correlationMessageDto = new CorrelationMessageDto();
         correlationMessageDto.setMessageName(command.getMessageName());
 
-        final VariableValueDto correlationKey = this.camunda7BaseVariableValueMapper.createValue(command.getCorrelationKey());
-        correlationMessageDto.setLocalCorrelationKeys(Map.of("correlationKey", correlationKey));
+        correlationMessageDto.setProcessInstanceId(command.getProcessInstanceId());
         correlationMessageDto.setProcessVariables(this.camunda7BaseVariableValueMapper.map(command.getData()));
         return correlationMessageDto;
     }

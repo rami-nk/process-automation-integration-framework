@@ -10,6 +10,7 @@ import org.camunda.community.rest.client.dto.CorrelationMessageDto;
 public class Camunda7MessageAdapter implements io.miragon.messageapi.api.MessageApi {
 
     private final Camunda7CorrelateMessageMapper mapper;
+
     private final MessageApi messageApi;
 
     @Override
