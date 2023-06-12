@@ -18,7 +18,6 @@ public class FlowableMessageAdapter implements MessageApi {
 
         var variables = mapper.map(command);
 
-        // get the first execution with the message event subscription
         var execution = runtimeService.createExecutionQuery()
                 .messageEventSubscriptionName("BookRequestConfirmation")
                 .processInstanceId(command.getProcessInstanceId())

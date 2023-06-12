@@ -5,7 +5,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.miragon.servicetaskapi.impl.WorkerInfo;
-import io.miragon.servicetaskapi.impl.WorkerSubscription;
+import io.miragon.servicetaskapi.impl.WorkerRegistration;
 import lombok.AllArgsConstructor;
 import org.camunda.bpm.client.ExternalTaskClient;
 import org.camunda.bpm.client.task.ExternalTask;
@@ -17,14 +17,14 @@ import java.util.Map;
 import java.util.Objects;
 
 @AllArgsConstructor
-public class Camunda7WorkerAdapter implements WorkerSubscription {
+public class Camunda7WorkerAdapter implements WorkerRegistration {
 
     private final ExternalTaskClient externalTaskClient;
 
     private final Camunda7PojoMapper camunda7PojoMapper;
 
     @Override
-    public void subscribe(WorkerInfo workerInfo) {
+    public void register(WorkerInfo workerInfo) {
         this.externalTaskClient.subscribe(workerInfo.getType())
                 .lockDuration(30000L)
                 .handler((externalTask, externalTaskService) ->

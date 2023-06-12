@@ -1,6 +1,6 @@
 package io.miragon.servicetaskapi;
 
-import io.miragon.servicetaskapi.impl.WorkerSubscription;
+import io.miragon.servicetaskapi.impl.WorkerRegistration;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
@@ -11,7 +11,7 @@ public class FlowableWorkerAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean
-    public WorkerSubscription flowableWorkerAdapter(final JavaDelegateRegistrator javaDelegateRegistrator, final JavaDelegateFactory javaDelegateFactory) {
+    public WorkerRegistration flowableWorkerAdapter(final JavaDelegateRegistrator javaDelegateRegistrator, final JavaDelegateFactory javaDelegateFactory) {
         return new FlowableWorkerAdapter(javaDelegateRegistrator, javaDelegateFactory);
     }
 

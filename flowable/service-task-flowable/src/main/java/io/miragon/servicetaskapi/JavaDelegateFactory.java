@@ -4,7 +4,6 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.miragon.servicetaskapi.impl.WorkerInfo;
-import org.flowable.engine.delegate.DelegateExecution;
 import org.flowable.engine.delegate.JavaDelegate;
 
 import java.lang.reflect.InvocationTargetException;
@@ -15,16 +14,13 @@ import java.util.Objects;
 public class JavaDelegateFactory {
 
     public JavaDelegate createDelegate(WorkerInfo workerInfo) {
-        return new JavaDelegate() {
-            @Override
-            public void execute(DelegateExecution execution) {
-                try {
-                    var data = mapInput(workerInfo.getInputType(), execution.getVariables());
-                    var result = workerInfo.getMethod().invoke(workerInfo.getInstance(), data);
-                    execution.setVariables(mapOutput(result));
-                } catch (IllegalAccessException | InvocationTargetException e) {
-                    throw new RuntimeException(e);
-                }
+        return execution -> {
+            try {
+                var data = mapInput(workerInfo.getInputType(), execution.getVariables());
+                var result = workerInfo.getMethod().invoke(workerInfo.getInstance(), data);
+                execution.setVariables(mapOutput(result));
+            } catch (IllegalAccessException | InvocationTargetException e) {
+                throw new RuntimeException(e);
             }
         };
     }

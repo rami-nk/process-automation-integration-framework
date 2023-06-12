@@ -5,9 +5,9 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class WorkerRegistry {
 
-    private final WorkerSubscription workerSubscription;
+    private final WorkerRegistration workerRegistration;
 
     public void register(final WorkerInfo workerInfo) {
-        workerSubscription.subscribe(workerInfo);
+        workerRegistration.register(workerInfo);
     }
 }
